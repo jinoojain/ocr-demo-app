@@ -66,21 +66,39 @@ var ocr = function (req, res, next) {
       return res.status(500).send(err);
     }
 
-    let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-    res.locals.jsonResponse = jsonResponse;
+    let jsonResponse = JSON.stringify(JSON.parse(body)); //, null, '  ');
+    console.log('jsonResponse:\n' + jsonResponse);
+   
+   /*
+    var stringOCR = '';
+    
+    if (jsonResponse != null && jsonResponse.regions != null) {
+      console.log('cp 1');
+      for (var item in jsonResponse.regions) {
+        console.log('cp 2');
+        for (var line in item.lines) {
+          console.log('cp 3');
+          for (var word in line.words) {
+            console.log('cp 4 - adding to stringOCR');
+            stringOCR += word.text;
+            stringOCR += ' ';
+          }
+          stringOCR += '\n';
+        }
+        stringOCR += '\n';
+      }
+    }
 
-    console.log('JSON Response\n');
-    console.log(jsonResponse);
+    console.log('string OCR: ' + stringOCR);
+
+    let responseString = JSON.stringify(jsonResponse);
+
+    */
+    res.send(jsonResponse);
   });
-
-  next();
 }
 
-// function to parse the response from the OCR API
-var parse = function (req, res) {
-  res.send(res.locals.jsonResponse);
-  // pull all the words out of the json response
-  // concatenate words in some meaningful way
-}
+// TODO: pull all the words out of the json response
+// TODO: concatenate words in some meaningful way
 
-app.post('/upload', [upload, ocr, parse]);
+app.post('/upload', [upload, ocr]);

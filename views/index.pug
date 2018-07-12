@@ -3,11 +3,27 @@ meta(charset='utf-8')
 
 title OCR with Dropzone
 
+// Dropzone js + css
 script(src='/dropzone.js')
 link(rel='stylesheet', href='/dropzone.css')
 
+// Dropzone config
+script.
+  Dropzone.options.myAwesomeDropzone = {
+    init: function() {
+      this.on("success", function(file, response) {
+        console.log("completed!");
+        console.log(response);
+        alert(response);
+      });
+    },
+    maxFilesize: 4, 
+    addRemoveLinks: true
+   } 
+
+
 body
   h1 Character Recognition Demo
-  p Drag and drop a picture below or click on the box to upload a file
-  p Images must be: JPEG, PNG, GIF, or BMP
-  form(action='/upload', method='post', class='dropzone', enctype='multipart/form-data')
+  p Drag and drop a picture below or click on the box to upload one
+  form(action='/upload', method='post', class='dropzone', id='myAwesomeDropzone', enctype='multipart/form-data')
+  div(class='response-data')
