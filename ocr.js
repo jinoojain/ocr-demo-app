@@ -9,12 +9,9 @@ const subscriptionKey = 'df57b75cfc1240f9b23236afe29d9337';
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
 // westus, replace "westcentralus" in the URL below with "westus".
-const uriBase =
-    'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr';
+const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr';
 
 var image_file = fs.readFileSync('./test_images/test_1.jpeg');
-
-const imageUrl = 'https://lchrismanmm.files.wordpress.com/2011/02/pad-1772.jpg'; 
 
 // Request parameters.
 const params = {
