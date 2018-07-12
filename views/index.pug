@@ -1,0 +1,14 @@
+doctype html
+meta(charset='utf-8')
+
+title OCR with Dropzone
+
+script(src='/dropzone.js')
+link(rel='stylesheet', href='/dropzone.css')
+
+head
+  title OCR Demo
+body
+  h1 Drag and drop file below
+
+form(action='/upload', method='post', class='dropzone', enctype='multipart/form-data')

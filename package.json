@@ -6,8 +6,18 @@
   "scripts": {},
   "author": "Jinoo Jain",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jinoojain/ocr-demo-app"
+  },
   "dependencies": {
+    "bower": "^1.8.4",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
     "fs": "0.0.1-security",
+    "nodemon": "^1.18.1",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
     "request": "^2.87.0"
   }
 }
