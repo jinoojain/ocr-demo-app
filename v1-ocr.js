@@ -20,13 +20,7 @@ const params = {
     'detectOrientation': 'true',
 };
 
-/*
-fs.readFile('./test_images/test_1.jpeg', (err, data) => {
-  if (err) throw err;
-});
-*/
-
-
+// OCR post request options
 const options = {
     uri: uriBase,
     qs: params,
@@ -37,6 +31,7 @@ const options = {
     }
 };
 
+// sending request to Microsoft
 request.post(options, (error, response, body) => {
   if (error) {
     console.log('Error: ', error);
