@@ -1,29 +1,56 @@
 doctype html
 meta(charset='utf-8')
 
-title OCR with Dropzone
+head
+  title OCR Demonstration
 
-// Dropzone js + css
-script(src='/dropzone.js')
-link(rel='stylesheet', href='/dropzone.css')
+  // Dropzone js + css
+  script(src='/dropzone.js')
+  link(rel='stylesheet', href='/dropzone.css')
+      
+  // Dropzone config
+  script.
+    Dropzone.options.myAwesomeDropzone = {
+      init: function() {
+        this.on("success", function(file, response) {
+          console.log("completed upload + OCR!");
+          console.log(response);
+          document.getElementById('response-data').innerText = response;
+        });
+      },
+      maxFilesize: 4, 
+      addRemoveLinks: true
+     } 
 
-// Dropzone config
-script.
-  Dropzone.options.myAwesomeDropzone = {
-    init: function() {
-      this.on("success", function(file, response) {
-        console.log("completed!");
-        console.log(response);
-        alert(response);
-      });
-    },
-    maxFilesize: 4, 
-    addRemoveLinks: true
-   } 
+  // loading Abel font
+  // a(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
+  style.
+    @import url('https://fonts.googleapis.com/css?family=Abel');
 
+  // page sytling
+  style.
+    body {background-color: black;}
+    h1 { 
+      color: #ffd400;
+      background-color: black;
+      font-family: Abel, sans-serif;
+      font-size: 40px;
+    }
+    p {
+      color: white;
+      background-color: black;
+      font-family: Abel, sans-serif;
+      font-size: 20px;
+    }
+    #response-data {
+      color: white;
+      background-color:black;
+      font-family: Abel, sans-serif;
+      font-size: 20px;
+    }
 
 body
-  h1 Character Recognition Demo
-  p Drag and drop a picture below or click on the box to upload one
+  h1 Nightingale Security Character Recognition Demo
+  p Drag and drop or click on the box below to upload a picture 
   form(action='/upload', method='post', class='dropzone', id='myAwesomeDropzone', enctype='multipart/form-data')
-  div(class='response-data')
+  div(id='response-data')
