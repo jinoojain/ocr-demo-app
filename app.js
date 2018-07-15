@@ -68,37 +68,37 @@ var ocr = function (req, res, next) {
 
     let jsonResponse = JSON.stringify(JSON.parse(body)); //, null, '  ');
     console.log('jsonResponse:\n' + jsonResponse);
-   
-   /*
-    var stringOCR = '';
-    
-    if (jsonResponse != null && jsonResponse.regions != null) {
-      console.log('cp 1');
-      for (var item in jsonResponse.regions) {
-        console.log('cp 2');
-        for (var line in item.lines) {
-          console.log('cp 3');
-          for (var word in line.words) {
-            console.log('cp 4 - adding to stringOCR');
-            stringOCR += word.text;
-            stringOCR += ' ';
+
+    var results = JSON.parse(body);
+
+    var resultString = '';
+
+    if (results != null && results.regions != null) {
+      console.log('chkpnt 1');
+
+      for (var i=0; i < results.regions.length; ++i) {
+        console.log('chkpnt 2');
+
+        for (var j=0; j<results.regions[i].lines.length; ++j){
+          console.log('chkpnt 3');
+
+          for (var k=0; k<results.regions[i].lines[j].words.length; ++k){
+            console.log('chkpnt 4');
+            let word = results.regions[i].lines[j].words[k];
+            resultString += word.text;
+            resultString += ' ';
           }
-          stringOCR += '\n';
+          resultString += '\n'
         }
-        stringOCR += '\n';
+        resultString += '\n'
       }
     }
 
-    console.log('string OCR: ' + stringOCR);
+    console.log('Result String: ' + resultString);
 
-    let responseString = JSON.stringify(jsonResponse);
-
-    */
-    res.send(jsonResponse);
+    res.send(resultString);
   });
 }
 
-// TODO: pull all the words out of the json response
-// TODO: concatenate words in some meaningful way
 
 app.post('/upload', [upload, ocr]);
