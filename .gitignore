@@ -5,9 +5,3 @@ test_function/
 *.swp
 .DS_Store
 dropzone/.DS_Store
-
-# exclude everything in uploads
-uploads/
-
-# exception to the rule above
-!uploads/.gitkeep
