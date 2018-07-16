@@ -24,7 +24,8 @@ Get an API subcription key and base uri from [Microsoft's Computer Vision API](h
 - We will be using only the 'Read text in images' or OCR functionality
 
 ## Quickstart for POC
-Follow these instructions for a simple Node proof of concept (not a web app/no Express)
+To run the full web app, skip below to 'Getting Started with the App'
+Follow these instructions for a barebones proof of concept (not a web app/no Express)
 
 ### To analyze image from a URL
 1. Copy the `v1-ocr.js` file
@@ -42,10 +43,10 @@ Follow these instructions for a simple Node proof of concept (not a web app/no E
 1. Clone the repository
 2. Make an `uploads/` directory at the root of the project and make sure it's writeable
 3. Run npm install
-4. Update the configs in `config.js`
-    - use [dotenv](https://github.com/motdotla/dotenv) to load enviroment variables from .env into your node.js app
-5. Run the app with `node app.js`
-6. The app will run on port 3000 (localhost:3000)
+4. Update the configs in the `.env` file
+5. Update the baseUri if needed in the `config.js` file
+6. Run the app with `node app.js`
+7. The app will run on port 3001 by default (localhost:3001)
 
 ---------
 ### Built With
