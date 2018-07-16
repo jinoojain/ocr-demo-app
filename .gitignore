@@ -4,6 +4,7 @@ test_images/
 test_function/
 *.swp
 .DS_Store
+dropzone/.DS_Store
 
 # exclude everything in uploads
 uploads/
