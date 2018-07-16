@@ -52,6 +52,7 @@ Follow these instructions for a simple Node proof of concept (not a web app/no E
 - [Node](https://nodejs.org/en/) - Javascript runtime
 - [Express](https://expressjs.com/) - Node.js web app framework
 - [Microsoft OCR API]() - for image to text API
+- [Dropzone.js](http://www.dropzonejs.com/) - drag & drop file uploads
 - [Pug](https://pugjs.org/api/getting-started.html) - HTML templating engine
 
 ### Author
