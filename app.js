@@ -2,11 +2,8 @@ const express = require('express');
 const app = express()
 const fileUpload = require('express-fileupload');
 const request = require('request');
+var config = require('./config');
 var fs = require('fs');
-
-// Microsoft OCR info
-const subscriptionKey = '661ac4c819e04b8cb87837f3fa4b5c64';
-const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr';
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -51,12 +48,12 @@ var ocr = function (req, res, next) {
   };
 
   const options = {
-      uri: uriBase,
+      uri: config.uriBase,
       qs: params,
       body: image_file,
       headers: {
           'Content-Type': 'application/octet-stream',
-          'Ocp-Apim-Subscription-Key' : subscriptionKey
+          'Ocp-Apim-Subscription-Key' : config.subscriptionKey
       }
   };
 
