@@ -53,7 +53,6 @@ Follow these instructions for a simple Node proof of concept (not a web app/no E
 - [Express](https://expressjs.com/) - Node.js web app framework
 - [Microsoft OCR API]() - for image to text API
 - [Pug](https://pugjs.org/api/getting-started.html) - HTML templating engine
-- [dotenv] - 
 
 ### Author
 - Jinoo Jain - Nightingale Security
