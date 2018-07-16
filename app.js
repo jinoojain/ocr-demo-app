@@ -15,7 +15,8 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-app.listen(3000, () => console.log('OCR demo app listening on port 3000!'));
+let server_port = config.port;
+app.listen(server_port, () => console.log(`OCR demo app listening on port ${server_port}!`));
 
 // function to upload picture file to the /uploads directory
 var upload = function (req, res, next) {
