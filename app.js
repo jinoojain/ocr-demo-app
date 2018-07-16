@@ -5,7 +5,7 @@ const request = require('request');
 var fs = require('fs');
 
 // Microsoft OCR info
-const subscriptionKey = 'df57b75cfc1240f9b23236afe29d9337';
+const subscriptionKey = '661ac4c819e04b8cb87837f3fa4b5c64';
 const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr';
 
 app.set('views', './views');
