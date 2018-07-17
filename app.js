@@ -44,7 +44,7 @@ var ocr = function (req, res, next) {
 
   // Request parameters.
   const params = {
-      'language': 'unk',
+      'language': 'en',
       'detectOrientation': 'true',
   };
 
@@ -72,16 +72,12 @@ var ocr = function (req, res, next) {
     var resultString = '';
 
     if (results != null && results.regions != null) {
-      console.log('chkpnt 1');
 
       for (var i=0; i < results.regions.length; ++i) {
-        console.log('chkpnt 2');
 
         for (var j=0; j<results.regions[i].lines.length; ++j){
-          console.log('chkpnt 3');
 
           for (var k=0; k<results.regions[i].lines[j].words.length; ++k){
-            console.log('chkpnt 4');
             let word = results.regions[i].lines[j].words[k];
             resultString += word.text;
             resultString += ' ';
@@ -93,8 +89,11 @@ var ocr = function (req, res, next) {
     }
 
     console.log('Result String: ' + resultString);
-
+    if (resultString === ''){
+      res.send('No text found in picture');
+    } else {
     res.send(resultString);
+    }
   });
 }
 

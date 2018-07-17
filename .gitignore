@@ -5,3 +5,4 @@ test_function/
 *.swp
 .DS_Store
 dropzone/.DS_Store
+uploads/*

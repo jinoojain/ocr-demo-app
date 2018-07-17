@@ -21,11 +21,17 @@ head
           console.log('removed file!');
           document.getElementById('response-data').innerText = '';
         });
+        this.on("addedfile", function() {
+          if (this.files[1] != null) {
+            console.log('addedfile event handler reached!!');
+            this.removeFile(this.files[0]);
+          }
+        });
       },
       maxFilesize: 4, 
       addRemoveLinks: true,
-      thumbnailWidth: 480,
-      thumbnailHeight: 480
+      thumbnailWidth: null,
+      thumbnailHeight: 600
      } 
 
   // loading Abel font
