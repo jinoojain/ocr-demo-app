@@ -43,7 +43,8 @@ Follow these instructions for a barebones proof of concept (not a web app/no Exp
 1. Clone the repository
 2. Make an `uploads/` directory at the root of the project and make sure it's writeable
 3. Run npm install
-4. Update the configs in the `.env` file
+4. Create a .env file that contains your env variables
+    - look [here](https://github.com/motdotla/dotenv) for documentation on the dotenv package
 5. Update the baseUri if needed in the `config.js` file
 6. Run the app with `node app.js`
 7. The app will run on port 3001 by default (localhost:3001)
