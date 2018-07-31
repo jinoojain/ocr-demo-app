@@ -3,6 +3,8 @@ Simple node/express app to demonstrate OCR
 
 Drag and drop a picture onto a webpage and see the extracted text
 
+Live demo here: https://dry-garden-98353.herokuapp.com/
+
 
 ## Prerequisites
 ### Node & NPM
